@@ -220,7 +220,7 @@ h4 {
          10. page single: special offer
          11. page category
             a. slidbar product filter
-            b. product block
+            b. Head & product block
          12. cart
          13. cart page
          14. checkout
@@ -1614,6 +1614,62 @@ input[type="range"]::-webkit-slider-thumb {
   margin-top: 0.5em;
 }
 
+/* 11. page category
+       a. slidbar product filter */
+
+.single-category .holder{
+  display:flex;
+  flex-direction: column;
+}
+
+.single-category .sidebar,
+.single-category .section{
+  flex: 1 0 100%;
+}
+
+/* 11. page category
+      b. Head & products block */
+
+.cat-description p {
+  font-weight: var(--fw3);
+  font-size: 0.9em;
+}
+
+.cat-navigation{
+  font-size: 0.85em;
+  margin: 2em 0;
+  justify-content: flex-end;
+  gap: 1em;
+}
+
+.cat-navigation > div{
+  position: relative;
+}
+.cat-navigation .item-filter a{
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.cat-navigation ul{
+  /* display: none; */
+  position: absolute;
+  left:0;
+  next
+}
+
+.cat-navigation .label, .cat-navigation ul li{
+  display:flex;
+  gap: 1em;
+  padding: 0.5em 1em;
+  transition:var(--trans-color);
+}
+
+:where(.item-sortir, .item-options) .label,
+.cat-navigation ul{
+  color: var(--light-text-color);
+  background: var(--light-bg-color);
+  cursor:pointer;
+}
 
 
 @media screen and (min-width: 481px) {
@@ -1978,5 +2034,19 @@ input[type="range"]::-webkit-slider-thumb {
   }
   .products.one .flexwrap > .row:last-child > .item {
     padding-left: 2em;
+  }
+
+  /* page category  */
+  .single-category .holder{
+    flex-direction: row;
+  }
+  .single-category .sidebar{
+    flex: 1 0 25%;
+  }
+  .single-category .section{
+    flex: 1 0 75%;
+  }
+  .single-category .sidbar .filter{
+    padding-right: 1.5em;
   }
 }
