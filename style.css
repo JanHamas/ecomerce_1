@@ -331,7 +331,8 @@ h4 {
   color: var(--white-color);
 }
 
-nav .fly-item {
+nav .fly-item,
+.header-nav .mini-cart .price .fly-item {
   top: 50%;
   margin-top: -24px;
   width: 30px;
@@ -1615,7 +1616,6 @@ input[type="range"]::-webkit-slider-thumb {
 
 /* 11. page category
        a. slidbar product filter */
-
 .single-category .holder {
   display: flex;
   flex-direction: column;
@@ -1715,6 +1715,7 @@ input[type="range"]::-webkit-slider-thumb {
   position: absolute;
   width: 400px;
   top:100%;
+  right:0;
   background: var(--white-color);
   z-index: 1000;
   box-shadow: rgb(0 0 0 / 30%) 0 10px 50px;
@@ -1724,7 +1725,52 @@ input[type="range"]::-webkit-slider-thumb {
   transform: none;
 }
 
+.mini-cart ul :where(li, .price){
+  position: relative;
+}
 
+.mini-cart .content{
+  width: var(--percent100);
+  height: var(--percent100);
+  touch-action: auto;
+  padding: 1em;
+}
+
+.mini-cart .cart-head{
+  font-size:  1.5em;
+  font-weight: var(--fw5);
+  color: var(--light-text-color);
+  padding-bottom:0.5em;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.mini-cart .cart-body{
+  padding: 0 1.5em;
+  margin: 0  -1.5em;
+  max-height:450px;
+  overflow: auto;
+}
+
+.mini-cart .thumbnail{
+  position: relative;
+  width: 80px;
+  height:80px;
+  flex-shrink: 0;
+  margin-right:1em;
+}
+
+.mini-cart .item-content p{
+  font-size:var(--font-small);
+  font-weight: var(--fw5);
+  margin-bottom:1.5em;
+  line-height:1.2;
+}
+
+.mini-cart .item-remove{
+  margin-left:1em;
+  flex:1;
+  justify-content: flex-end;
+}
 
 @media screen and (min-width: 481px) {
   .products.main .item .banners .row {
@@ -1793,6 +1839,8 @@ input[type="range"]::-webkit-slider-thumb {
   margin-left: auto;
   color: var(--light-text-color);
 }
+
+
 
 @media screen and (min-width: 768px) {
   .row.products .price .current {
