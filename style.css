@@ -1546,7 +1546,7 @@ form label {
 }
 
 /* 10. page single: 
-        a.special offer */
+u        a.special offer */
 
 .page-single .stock {
   margin: 2em 0em;
@@ -1563,37 +1563,36 @@ form label {
   background: var(--secondary-color);
 }
 
-.bycolor label[for="cored"]::before{
-  background-color:var(--primary-color);
+.bycolor label[for="cored"]::before {
+  background-color: var(--primary-color);
 }
 
-.bycolor label[for="colight"]::before{
+.bycolor label[for="colight"]::before {
   background-color: var(--border-color);
 }
 
-.bycolor input:checked + label{
-  background-color:transparent;
-  border:2px solid var(--dark-color);
+.bycolor input:checked + label {
+  background-color: transparent;
+  border: 2px solid var(--dark-color);
 }
 
 input[type="range"] {
-  -webkit-appearance: none; 
+  -webkit-appearance: none;
   appearance: none;
   width: var(--percent100);
 }
 
-input [type="range"]:focus{
+input [type="range"]:focus {
   outline: 0;
-
 }
 
 input[type="range"]::-webkit-slider-runnable-track {
   width: var(--percent100);
   height: 5px;
   background: var(--border-color);
-  box-shadow:none;
-  border:0;
-  cursor:pointer;
+  box-shadow: none;
+  border: 0;
+  cursor: pointer;
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -1602,12 +1601,12 @@ input[type="range"]::-webkit-slider-thumb {
   z-index: 2;
   position: relative;
   width: 20px;
-  height:18px;
+  height: 18px;
   background: var(--primary-color);
   margin-top: -7px;
 }
 
-.byprice .price-range{
+.byprice .price-range {
   display: flex;
   justify-content: space-between;
   color: var(--light-text-color);
@@ -1617,19 +1616,19 @@ input[type="range"]::-webkit-slider-thumb {
 /* 11. page category
        a. slidbar product filter */
 
-.single-category .holder{
-  display:flex;
+.single-category .holder {
+  display: flex;
   flex-direction: column;
 }
 
 .single-category .sidebar,
-.single-category .section{
+.single-category .section {
   flex: 1 0 100%;
 }
 
 /* 11. page category
       b. Head & products block */
-.page-title{
+.page-title {
   margin-bottom: 3em;
 }
 .cat-description p {
@@ -1637,48 +1636,48 @@ input[type="range"]::-webkit-slider-thumb {
   font-size: 0.9em;
 }
 
-.cat-navigation{
+.cat-navigation {
   font-size: 0.85em;
   margin: 2em 0;
   justify-content: flex-end;
   gap: 1em;
 }
-.cat-navigation .item-filter{
+.cat-navigation .item-filter {
   margin-right: auto;
-
 }
-.cat-navigation > div{
+.cat-navigation > div {
   position: relative;
 }
-.cat-navigation .item-filter a{
+.cat-navigation .item-filter a {
   align-items: center;
   text-transform: uppercase;
 }
 
-.cat-navigation ul{
+.cat-navigation ul {
   display: none;
   position: absolute;
-  left:0;
+  left: 0;
   min-width: var(--percent100);
   width: max-content;
   z-index: 10;
 }
 
-.cat-navigation .label, .cat-navigation ul li{
-  display:flex;
+.cat-navigation .label,
+.cat-navigation ul li {
+  display: flex;
   gap: 1em;
   padding: 0.5em 1em;
-  transition:var(--trans-color);
+  transition: var(--trans-color);
 }
 
 :where(.item-sortir, .item-options) .label,
-.cat-navigation ul{
+.cat-navigation ul {
   color: var(--light-text-color);
   background: var(--light-bg-color);
-  cursor:pointer;
+  cursor: pointer;
 }
 
-.cat-navigation :where(label, ul li):hover{
+.cat-navigation :where(label, ul li):hover {
   color: var(--dark-color);
 }
 
@@ -1686,9 +1685,27 @@ input[type="range"]::-webkit-slider-thumb {
   display: block;
 }
 
-.load-more{
-  margin: 2em 0 4em;  
+.load-more {
+  margin: 2em 0 4em;
 }
+
+.filter{
+  position: fixed;
+  top:0;
+  left:0;
+  bottom:0;
+  padding: 2em;
+  max-width: 400;
+  width:90%;
+  background-color:var(--white-color);
+  overflow:auto;
+  z-index:1000;
+  box-shadow: rgb(0 0 0 / 30%) 0 10px 50px;
+  visibility: hidden;
+  opacity:0;
+  
+}
+
 
 
 @media screen and (min-width: 481px) {
@@ -2056,16 +2073,16 @@ input[type="range"]::-webkit-slider-thumb {
   }
 
   /* page category  */
-  .single-category .holder{
+  .single-category .holder {
     flex-direction: row;
   }
-  .single-category .sidebar{
+  .single-category .sidebar {
     flex: 1 0 25%;
   }
-  .single-category .section{
+  .single-category .section {
     flex: 1 0 75%;
   }
-  .single-category .sidbar .filter{
+  .single-category .sidbar .filter {
     padding-right: 1.5em;
   }
 }
