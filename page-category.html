@@ -965,16 +965,18 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.3.1/index.js"></script>
       <script src="main.js"></script>
       <script>
-         const FtoShow = '.filter';
-         const Fpopup = document.querSelector(Ftoshow);
-         const Ftrigger = document.querySelector('.filter-trigger');
+        const FtoShow = '.filter';
+const Fpopup = document.querySelector(FtoShow); // Fix the case here
+const Ftrigger = document.querySelector('.filter-trigger');
 
+Ftrigger.addEventListener('click', () => {
+    setTimeout(() => {
+        if (!Fpopup.classList.contains('show')) {
+            Fpopup.classList.add('show');
+        }
+    }, 250);
+});
 
-         Ftrigger.addEventListener('click',() => {
-            setTimeout(( => {
-               if()
-            }))
-         })
       </script>
    </body>
 </html>
