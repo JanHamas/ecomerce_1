@@ -1703,7 +1703,11 @@ input[type="range"]::-webkit-slider-thumb {
   box-shadow: rgb(0 0 0 / 30%) 0 10px 50px;
   visibility: hidden;
   opacity:0;
-  
+}
+
+.filter.show{
+  visibility: visible;
+  opacity:1;
 }
 
 
@@ -2083,6 +2087,15 @@ input[type="range"]::-webkit-slider-thumb {
     flex: 1 0 75%;
   }
   .single-category .sidbar .filter {
-    padding-right: 1.5em;
+    padding: 0 1.5em 0 0 ;
+    position: sticky;
+    top: 2em;
+    box-shadow: none;
+    width: var(--percent100);
+    z-index: initial;
+    visibility: visible;
+    opacity: 1;
+    
   }
+
 }

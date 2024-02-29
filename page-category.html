@@ -650,7 +650,12 @@
                                     </div>
                                  </div>
                               </div>
-                              <div class="products main flexwrap"></div>
+                              <div class="products main flexwrap">
+                                 <!-- products category sturcture,
+                                 you can copy form featured products 
+                                 start with .item -->
+
+                              </div>
                               <div class="load-more flexcenter">
                                  <a href="#" class="secondary-button">Load more</a>
                               </div>
@@ -966,8 +971,8 @@
       <script src="main.js"></script>
       <script>
         const FtoShow = '.filter';
-const Fpopup = document.querySelector(FtoShow); // Fix the case here
-const Ftrigger = document.querySelector('.filter-trigger');
+        const Fpopup = document.querySelector(FtoShow); // Fix the case her e
+        const Ftrigger = document.querySelector('.filter-trigger');
 
 Ftrigger.addEventListener('click', () => {
     setTimeout(() => {
@@ -976,7 +981,13 @@ Ftrigger.addEventListener('click', () => {
         }
     }, 250);
 });
-
+  // auto close by click outside .filter
+  document.addEventListener('click', (e) => {
+   const isClosest = e.target.closest(FtoShow);
+   if(!isClosest && Fpopup.classList.contains('show')) {
+      Fpopup.classList.remove('show');      
+   }
+  })
       </script>
    </body>
 </html>
