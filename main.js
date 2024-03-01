@@ -115,3 +115,24 @@ for (let x = 0; x < stock.length; x++){
   percent = sold *100/stock;
   stock[x].querySelector('.available').style.width = percent + '%';
 }
+
+// Show cart on click
+const divtoShow = '.mini-cart';
+const divPopup = document.querySelector(divtoShow);
+const divTrigger = document.querySelector('.cart-trigger');
+
+divTrigger.addEventListener('click', () => {
+  setTimeout(() => {
+    if (!divPopup.classList.contains('show')) {
+      divPopup.classList.add('show');
+    }
+  }, 250);
+});
+
+// Close by click outside
+document.addEventListener('click', (e) => {
+  const isClosest = e.target.closest(divtoShow);
+  if (!isClosest && divPopup.classList.contains('show')) {
+    divPopup.classList.remove('show');
+  }
+});
