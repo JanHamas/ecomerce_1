@@ -1295,14 +1295,14 @@ form.search button:hover {
   cursor: pointer;
   z-index: 1;
 }
-:where(.products .variant, .filter-block:not(.pricing)) input {
+/* remember this  */
+/* :where(.products .variant, .filter-block:not(.pricing)) input {
   overflow: hidden;
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-
   height: 0;
   width: 0;
 }
@@ -1314,8 +1314,21 @@ form.search button:hover {
   bottom: 0;
   left: 0;
   border-radius: 50%;
+} */
+
+
+
+:where(.products .variant, .filter-block:not(.pricing)) input{
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+  position:absolute;
+  height:0;
+  width:0;
 }
 
+.products .colors .variant label::before{
+  opacity: 1;
+}
 .products .variant label[for="cogrey"]::before {
   background-color: #ff7c2e;
 }
@@ -1854,25 +1867,124 @@ input[type="range"]::-webkit-slider-thumb {
   border-bottom: 1px solid var(--border-color);
 }
 
-
-
-
-
-@media screen and (min-width: 481px) {
-  .products.main .item .banners .row {
-    flex: 0 0 50%;
-  }
-  /* produts single  */
-  .products.one .big-image {
-    margin-bottom: 2em;
-  }
-  .products.one .image-show {
-    height: 680px;
-  }
-  .products.one .thumbnail-show {
-    height: 160px;
-  }
+.cart-summary{
+  width:var(--percent100);
+  margin:2.5em 0 4em;
 }
+
+.cart-summary .item{
+  background:var(--light-bg-color);
+}
+
+.cart-summary .coupon{
+  position:relative;
+}
+
+.cart-summary .coupon input{
+  font-size: 1.1em;
+  outline:0;
+  width:var(--percent100);
+  padding:0 1.5em;
+  line-height:50px;
+  background:var(--white-color);
+  border:3px solid var(--dark-color);
+}
+
+.cart-summary .coupon button{
+  position:absolute;
+  line-height: 56px;
+  top:0;
+  right:0;
+  border:0;
+  outline:0;
+  font-size:1em;
+  padding:0 2.5em;
+  background:var(--dark-color);
+  color:var(--white-color);
+  cursor:pointer;
+}
+
+.cart-summary .shipping-rate{
+  padding:0 2em 0 1em;
+}
+
+.cart-summary .shipping-rate .has-child > a{
+  font: size 1em;
+  margin:2em 0;
+  border:0;
+}
+
+.cart-summary .content form{
+  display:flex;
+  flex-direction:column;
+  margin-bottom:1em;
+}
+
+.styled :where(input,select,textarea){
+  padding:0.75em;
+  outline:0;
+  background:var(--white-color);
+  border-width:0 0 3px 0;
+  border-style:solid;
+  border-color:var(--border-color);
+}
+
+.products .cart-summary .variant form label{
+  position: relative;
+  border: 0;
+  background:var(--white-color);
+  transform:scale(.5) translateX(-25px);
+}
+
+.cart-summary .variant p span{
+  position: absolute;
+  top:0;
+  left:40px;
+  line-height:3;
+}
+
+.cart-summary .variant input:checked + label::before{
+  opacity:1;
+}
+
+.products.cart .cart-total table tr > * {
+ padding: 0;
+}
+.products.cart .cart-total table td{
+  text-align:right;
+}
+
+.cart-summary .cart-total{
+  padding:2em;
+  background:var(--border-color);
+  line-height: 2em;
+}
+
+.cart-summary .cart-total table{
+  width:var(--percent100);
+
+}
+
+.cart-summary .cart-total table tr{
+  display:flex;
+  justify-content:space-between;
+}
+
+.cart-summary .grand-total td{
+  font-size: 2em;
+  font-family: 'Poppins';
+  font-weight: var(--fw8);
+  line-height:2em;
+}
+
+.cart-summary .cart-total > a {
+  width: var(--percent100);
+  display:block;
+  text-align:center;
+  margin-top: 2em;
+  font-size: 1.2em;
+}
+
 
 /* 11. page category
     a. slidbar product filter */
@@ -1927,6 +2039,49 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 
+
+@media screen and (min-width: 481px) {
+  .products.main .item .banners .row {
+    flex: 0 0 50%;
+  }
+  /* produts single  */
+  .products.one .big-image {
+    margin-bottom: 2em;
+  }
+  .products.one .image-show {
+    height: 680px;
+  }
+  .products.one .thumbnail-show {
+    height: 160px;
+  }
+}
+
+@media screen and (max-width: 639px){
+  #cart-table thead{
+    display:none;
+  }
+  #cart-table tbody tr{
+    display:flex;
+    flex-wrap:wrap;
+    position:relative;
+    align-items:center;
+  }
+  #cart-table tbody tr td:first-child{
+    width:var(--percent100);
+    min-width:var(--percent100);
+    position:relative;
+  }
+  #cart-table tbody tr td:not(first-child){
+    flex-basis:0;
+    flex-grow:1;
+    max-width:var(--percent100);
+  }
+  #cart-table tbody tr td:last-child{
+    position:absolute;
+    top:0;
+    right:0;
+  }
+}
 
 @media screen and (min-width: 768px) {
   .row.products .price .current {
