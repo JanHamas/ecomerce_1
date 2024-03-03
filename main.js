@@ -145,3 +145,9 @@ window.onload = function () {
 document.querySelector('modalclose').addEventListener('clikc', function(){
   document.querySelector('.site').classList.remove('showmodal')
 })
+
+// Go to up on click
+const goTopButton = document.querySelector(".backtotop");
+goTopButton.addEventListener("click", function () {
+  window.scrollTo(0, 0);
+});
