@@ -140,11 +140,11 @@ document.addEventListener('click', (e) => {
 
 // show modal  on load
 window.onload = function () {
-  document.querySelector('.site').classList.toggle('showmodal')
+  document.querySelector('.site').classList.toggle('showmodal');
 }
-document.querySelector('modalclose').addEventListener('clikc', function(){
-  document.querySelector('.site').classList.remove('showmodal')
-})
+document.querySelector('.modalclose').addEventListener('click', function(){
+  document.querySelector('.site').classList.remove('showmodal');
+});
 
 // Go to up on click
 const goTopButton = document.querySelector(".backtotop");
