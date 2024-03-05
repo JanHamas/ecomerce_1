@@ -263,7 +263,7 @@ h4 {
 
 :where(.header-top, .thetop-nav) ul ul {
   position: absolute;
-  left: -1em;
+  left: 0px;
   line-height: 2em;
   background-color: var(--white-color);
   border: 1px solid var(--border-color);
@@ -314,7 +314,7 @@ h4 {
   border-radius: var(--percent50);
   background: var(--secondary-color);
   top: -10px;
-  left: 0px;
+  left: 17px;
   opacity: 0.7;
 }
 
@@ -2163,13 +2163,14 @@ input[type="range"]::-webkit-slider-thumb {
   visibility: hidden;
   opacity: 0;
   transform: translateX(20px);
-  transition: transform 0.2s visibility 0.2s opacity 0.2s;
+  transition: transform 0.5s ease, visibility 0.5s ease, opacity 0.5s ease;
 }
+
 .showmodal .modal {
   visibility: visible;
   opacity: 1;
   transform: translateX(0);
-  transition: transform 0.2s visibility 0.2s opacity 0.2s;
+  transition: transform 1s ease, visibility 1s ease, opacity 1s ease;
 }
 .modal .image {
   position: relative;
@@ -2216,7 +2217,6 @@ input[type="range"]::-webkit-slider-thumb {
   transform: translateY(20px);
   transition: transform 0.2s visibility 0.2s opacity 0.2s; */
 }
-
 
 /* responsive */
 
