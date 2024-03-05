@@ -2201,21 +2201,23 @@ input[type="range"]::-webkit-slider-thumb {
 
 .backtotop a {
   position: fixed;
-  bottom: 6em;
+  bottom: 2.5em;
   right: 2em;
   z-index: 1000;
   text-align: center;
-  gap: 0;
-  padding-block-end: 0.5em 1em;
   font-size: var(--font-small);
-  background-color: var(--light-bg-color);
+  background-color: var(--primary-color);
   color: var(--white-color);
   font-weight: var(--fw5);
-  border-radius: 3px;
-  /* visibility: hidden;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: transform 0.2s visibility 0.2s opacity 0.2s; */
+  border-radius: 4px;
+  gap: 0;
+  padding: 3px 5px;
+}
+
+.backtotop a .ri-arrow-up-line {
+  line-height: 1;
+  font-size: 1.25em;
+  margin-bottom: 3px;
 }
 
 /* responsive */
