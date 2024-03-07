@@ -495,9 +495,9 @@ form.search button:hover {
   z-index: 10;
   position: relative;
 }
-/* .off-canvas .canvas-head .logo .circle{
-          opacity: .9;
-        } */
+.off-canvas .canvas-head .logo .circle {
+  opacity: 0.9;
+}
 
 .t-close {
   font-size: 1.25em;
