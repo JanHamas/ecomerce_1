@@ -10,7 +10,6 @@ function copyMenu() {
   // Copy inside nav to nav
   var mainNav = document.querySelector(".header-nav nav");
   var navPlace = document.querySelector(".off-canvas nav");
-
   if (mainNav && navPlace) {
     navPlace.innerHTML = mainNav.innerHTML;
   }
@@ -18,7 +17,6 @@ function copyMenu() {
   // Copy .header-top .wrapper to .thetop-nav
   var topNav = document.querySelector(".header-top");
   var topPlace = document.querySelector(".off-canvas .thetop-nav");
-
   if (topNav && topPlace) {
     topPlace.innerHTML = topNav.innerHTML;
   }
@@ -146,8 +144,11 @@ document.querySelector('.modalclose').addEventListener('click', function(){
   document.querySelector('.site').classList.remove('showmodal');
 });
 
-// Go to up on click
+
 const goTopButton = document.querySelector(".backtotop");
 goTopButton.addEventListener("click", function () {
-  window.scrollTo(0, 0);
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
 });
